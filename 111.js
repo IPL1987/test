@@ -144,6 +144,6 @@
 // if (res[res.length - 1] % 2 == 0) {
 //   console.log('Четное')
 // } else console.log('Не четное')
-let num = 345;
+let num = 347;
 let res = String(num);
 console.log(+res[0] + +res[1] + +res[2])
