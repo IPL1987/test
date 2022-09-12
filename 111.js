@@ -182,11 +182,11 @@
 // }
 // console.log(num);
 // //---------------------------
-let q = 5;
-while (q <= 1000) {
-  console.log(q);
-  q *= 3;
-}
+// let q = 5;
+// while (q <= 1000) {
+//   console.log(q);
+//   q *= 3;
+// }
 
 
 // FOR
@@ -455,14 +455,14 @@ while (q <= 1000) {
 // //
 // 10 30 51
 //---------------------------- Сумма эл-в по первой цифре чисел в обьекте
-// let obj = { a: 10, b: 20, c: 30, d: 40, e: 50 };
+// let obj = {a: 10, b: 20, c: 30, d: 40, e: 50};
 // let sum = 0;
 // for (let elem in obj) {
-//   if (obj[elem] == '10' || obj[elem] == '40') {
-//     sum += obj[elem];
-//   }
+//     if (String(obj[elem])[0] === '1' || String(obj[elem])[0] === '2') {
+//         sum += +obj[elem];
+//     }
 // }
-// console.log(sum);
+// console.log(sum); 
 //
 // 50
 // //---------------------------------
@@ -712,13 +712,221 @@ while (q <= 1000) {
 // [ [ 1, 2, 3, 4, 5 ], [ 6, 7, 8, 9, 10 ], [ 11, 12, 13, 14, 15 ] ]
 //------------------------------сокращенны й вид
 // let arr = [];
-// for (let i = 0; k = 1; i < 3; i++) {
+// for (let i = 0, k =1; i < 3; i++) {
 //   arr[i] = [];
-//   for (let j = 1; j <= 5; j++) {
+//   for (let j = 0; j < 5; j++) {
 //     arr[i].push(k++);
 //   }
 // }
 // console.log(arr);
-//
+
 // [ [ 1, 2, 3, 4, 5 ], [ 6, 7, 8, 9, 10 ], [ 11, 12, 13, 14, 15 ] ]
 //------------------------------
+// let arr = [];
+// for (let i = 0, k = 1; i < 4; i++) {
+//   arr[i] = [];
+//   for (let j = 1; j <= 2; j++) {
+//     arr[i].push(k++)
+//   }
+// }
+// console.log(arr)
+//
+// [ [ 1, 2 ], [ 3, 4 ], [ 5, 6 ], [ 7, 8 ] ]
+//------------------------------Содзание трезмерного массива
+// let arr = [];
+// for (let i = 0, k = 1; i < 1; i++) {
+//   arr[i] = [];
+//   for (let f = 0; f <= 3; f++) {
+//     arr[i][f] = [];
+//     for (let j = 1; j <= 2; j++) {
+//       arr[i][f].push(k++)
+//     }
+//   }
+// }
+// console.log(arr)
+//
+//[ [ [ 1, 2 ], [ 3, 4 ], [ 5, 6 ], [ 7, 8 ] ] ]
+//---------------------------Сумма эл-в двухмерного массива
+// let sum =0;
+// let obj = {
+//   key1: {key1: 1,key2: 2,key3: 3,},
+//   key2: {key1: 4,key2: 5,key3: 6,},
+//   key3: {key1: 7,key2: 8,key3: 9,},
+// }
+// for (let elem in obj) {
+//   sum += obj.key1[elem]+ obj.key2[elem]+ obj.key3[elem]
+//   console.log(sum)
+// }
+//----------------------------Сумма эл-в трехмерного обьекта
+// let obj = {
+// 	1: {  1: {	1: 111,	2: 112,	3: 113,
+// 		    },
+// 		    2: { 1: 121, 2: 122, 3: 123,
+// 		    },
+// 	},
+// 	2: {  1: { 1: 211, 2: 212, 3: 213,
+// 		    },
+// 		    2: { 1: 221, 2: 222, 3: 223,
+// 		    },
+// 	},
+// 	3: {  1: { 1: 311, 2: 312, 3: 313,
+// 		    },
+// 		    2: { 1: 321, 2: 322, 3: 323,
+// 		    },
+// 	},
+// }
+// let sum=0;
+// for (let key in obj) {
+// 	let subObj = obj[key];
+// 	for (let subKey in subObj) {
+//     let subObjTwo = subObj[subKey]
+//     for( let subKeyTwo in subObjTwo){
+//       console.log(sum += subObjTwo[subKeyTwo])
+//     }
+// 	}
+// }
+//
+// 3906
+//-----------------------------------Вывод всех эл-в массива в обьекте
+// let data = {
+//   1: [ 'data11', 'data12', 'data13',],
+//   2: [ 'data21', 'data22', 'data23',],
+//   3: [ 'data31', 'data32', 'data33',],
+//   4: [ 'data41', 'data42', 'data43',],
+// };
+// for (let count in data) {
+//   for(let item of data[count]){
+//     console.log(item)
+//   }
+// }
+//
+// data11....
+//
+//---------------------------------Вывод в строку вложенных эл-в через циклы
+// let data = [
+// 	{
+// 		1: [  'data111',  'data112',  'data113',],
+// 		2: [	'data121',	'data122',	'data123',],
+// 	},
+// 	{
+// 		1: [	'data211',	'data212',	'data213',],
+// 		2: [	'data221',	'data222',	'data223',],
+// 	},
+// 	{
+// 		1: [	'data411',	'data412',	'data413',],
+// 		2: [	'data421',	'data422',	'data423',],
+// 	},
+// ];
+// for (let objects of data) {
+// 	for (let subArrays in objects) {
+// 		for (let items of objects[subArrays]) {
+// 			console.log(items)
+// 		}
+// 	}
+// }
+//
+// data111...
+//
+//----------------------------------Выведите на экран сумму зарплат тех работников, возраст которых равен или более 30 лет.
+// let employees = [
+// 	{ name: 'name1', salary: 300, age: 28,
+// 	},
+// 	{ name: 'name2', salary: 400, age: 29,
+// 	},
+// 	{ name: 'name3', salary: 500, age: 30,
+// 	},
+// 	{ name: 'name4', salary: 600, age: 31,
+// 	},
+// 	{ name: 'name5', salary: 700, age: 32,
+// 	},
+// ];
+// let sum = 0;
+// for (let elem of employees) {
+// 	if (elem.age >= 30 ? sum += elem.salary : 0) {
+// 		console.log(sum)
+// 	}
+// }
+//
+// 1800
+//
+//--------------------------------Добавление обьекта в массив обьектов
+// let employees = [
+// 	{	name: 'name1',	salary: 300,	age: 28,},
+// 	{	name: 'name2',	salary: 400,	age: 29,},
+// 	{	name: 'name3',	salary: 500,	age: 30,},
+// ];
+// employees.push({ name: 'name4', salary: 350, age: 26, })
+// console.log(employees)
+//
+//------------------------------ Добавление элементов в многомерные объекты
+// let affairs = {
+// 	'2019-12-28': ['data11', 'data12', 'data13'],
+// 	'2019-12-29': ['data21', 'data22', 'data23'],
+// 	'2019-12-30': ['data31', 'data32', 'data33'],
+// }
+// affairs['2019-12-29'].push('data99')
+// affairs['2019-12-30'].push('data88', 'data77')
+// console.log(affairs)
+//
+//-------------------------------- Добавление элементов в многомерные объекты
+// let students = {
+// 	'group1': {
+// 		'subgroup11': ['student111', 'student112', 'student113'],
+// 		'subgroup12': ['student121', 'student122', 'student123'],
+// 	},
+// 	'group2': {
+// 		'subgroup21': ['student211', 'student212', 'student213'],
+// 		'subgroup22': ['student221', 'student222', 'student223'],
+// 	},
+// 	'group3': {
+// 		'subgroup31': ['student311', 'student312', 'student313'],
+// 		'subgroup32': ['student321', 'student322', 'student323'],
+// 	},
+// };
+// students.group4 = {}  //создание новой группы
+// students.group4.subgroup99 = []   //создание новой пдгруппы
+// students.group4.subgroup99.push('student99', 'stodent999')
+// students.group1.subgroup00 = []   //создание новой пдгруппы
+// students.group1.subgroup00.push('stodent007')
+// students.group1.subgroup11.push('student000')  //добавление эл-в в подгруппу
+// console.log(students)
+//
+//---------------------------- Квадратный корень из суммы кубов элементов массива
+// let arr = [4, 2, 5, 19, 13, 0, 10]
+// let sum = 0;
+// for(let elem of arr){
+// 	console.log(sum += Math.pow(elem, 3))  // 10253
+// }
+// console.log(Math.sqrt(sum).toFixed(1))  //101,3
+//
+//---------------------------- Максимальное значение массива
+// let arr = [1, 5, 10, 34, 100];
+// let max = Math.max.apply(null, arr);
+// console.log(max);
+//
+//100
+//------------------------------- Случайное число от 10 до 100
+// function getRandomInt(min, max) {
+//   return Math.floor(Math.random() * (max - min) + min);
+// }
+// console.log(getRandomInt(10, 20));
+//
+//------------------------------- Заполнение массива рандомными числами
+// let arr = [];
+// for (let i = 0; i <= 9; i++) {
+//   arr = Math.floor(Math.random() * 10)
+// }
+// console.log(arr);
+//
+//------------------------------ Модуль разности чисел
+// let a = -7;
+// let b = -2;
+// console.log(Math.abs(a-b))
+//
+//------------------------------
+// let str = 'я учу javascript!';
+// console.log(str.slice(5,7))
+
+let str = 'dsdjavascript.html'; 
+console.log(str.endsWith(".html") ? "Дa" : "Нет");
+
